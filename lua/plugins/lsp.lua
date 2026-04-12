@@ -93,7 +93,16 @@ return {
                 ruby_lsp = { mason = false },
                 rubocop = { mason = false },
                 bashls = { mason = "bash-language-server" },
-                rust_analyzer = { mason = "rust-analyzer" },
+                rust_analyzer = {
+                    mason = "rust-analyzer",
+                    settings = {
+                        rust_analyzer = {
+                            check = {
+                                command = "clippy",
+                            }
+                        }
+                    },
+                },
             },
             -- Map filetypes to their required tooling
             -- Each entry can have: servers (LSP), tools (formatters/linters), gems (via gem_install)
